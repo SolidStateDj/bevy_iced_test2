@@ -1,0 +1,23 @@
+[package]
+name = "bevy_iced_plugin"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.13.2"
+bevy_iced = { path = 'bevy_iced' }
+# bevy_iced = {git = ''https://github.com/tasgon/bevy_iced.git }
+rand = "0.8.5"
+
+
+# Enable a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 1
+
+# Enable high optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+
+[toolchain]
+channel = "nightly"
+
